@@ -1,0 +1,13 @@
+services:
+  trustsign:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      # À changer hors démo
+      TRUSTSIGN_JWT_SECRET: "remplacez-moi-par-un-secret-long-0123456789"
+      TRUSTSIGN_PKI_PASSWORD: "remplacez-moi"
+    volumes:
+      - trustsign-data:/opt/trustsign/data
+volumes:
+  trustsign-data:
